@@ -102,7 +102,7 @@ a {
   width: 4rem;
   position: fixed;
   top: 6rem;
-  left: 5rem;
+  left: 5%;
   cursor: pointer;
   display: none;
   z-index: 1000;
@@ -111,8 +111,8 @@ a {
 .social-icons {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 10%;
+  transform: translateY(-50%);
   text-align: center;
 }
 
@@ -120,13 +120,13 @@ a {
   text-transform: uppercase;
   margin-bottom: var(--gutter-vertical);
   font-weight: 400;
-  letter-spacing: 1rem;
+  letter-spacing: 0.8rem;
 }
 
 .social-icons a {
   display: inline-block;
-  width: 5rem;
-  height: 5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   border: 2px solid white;
   border-radius: 50%;
   font-size: 2rem;
@@ -151,7 +151,29 @@ a {
   align-items: center;
 }
 
-@media screen and (max-width: 950px) {
+@keyframes slide-nav {
+  0% {
+    transform: translateY(-1000%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .social-icons {
+    top: 60%;
+  }
+
+  .heading--main {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
   html {
     font-size: 60%;
   }
@@ -166,7 +188,8 @@ a {
   }
 
   .social-icons {
-    top: 40%;
+    top: 60%;
+    left: 5%;
   }
 
   .social-icons a:not(:last-child) {
@@ -174,7 +197,7 @@ a {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
   .navbar {
     transform: translateY(-100vh);
   }
@@ -196,6 +219,10 @@ a {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+  }
+
+  .navbar.responsive .navbar__nav .nav__item {
+    margin: 0;
   }
 
   .humburger {
@@ -225,5 +252,19 @@ a {
 
   .humburger.active div:nth-child(3) {
     transform: rotate(495deg) translate(-5px, 7px);
+  }
+
+  .social-icons {
+    top: 40%;
+  }
+
+  .heading--main {
+    font-size: 1.8rem;
+  }
+
+  .social-icons a {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.8rem;
   }
 }
